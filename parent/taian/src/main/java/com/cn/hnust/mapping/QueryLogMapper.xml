@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.QueryLogMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.hnust.model.QueryLog" >
+    <id column="log_id" property="logId" jdbcType="INTEGER" />
+    <result column="hpzl" property="hpzl" jdbcType="VARCHAR" />
+    <result column="hphm" property="hphm" jdbcType="VARCHAR" />
+    <result column="logtime" property="logtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    log_id, hpzl, hphm, logtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from query_log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <select id="getQueryLogByCondation" resultMap="BaseResultMap" parameterType="com.cn.hnust.model.QueryLog" >
+    select 
+    <include refid="Base_Column_List" />
+    from query_log
+    where 1=1
+    <if test="hpzl!=null and hpzl!=''">
+    and HPZL =  #{hpzl,jdbcType=VARCHAR}
+    </if>
+    <if test="hphm!=null and hphm!=''">
+    and HPHM = #{hphm,jdbcType=VARCHAR}
+    </if>
+  </select>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from query_log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.hnust.model.QueryLog" >
+    insert into query_log (log_id, hpzl, hphm, 
+      logtime)
+    values (#{logId,jdbcType=INTEGER}, #{hpzl,jdbcType=VARCHAR}, #{hphm,jdbcType=VARCHAR}, 
+      #{logtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.hnust.model.QueryLog" >
+    insert into query_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logId != null" >
+        log_id,
+      </if>
+      <if test="hpzl != null" >
+        hpzl,
+      </if>
+      <if test="hphm != null" >
+        hphm,
+      </if>
+      <if test="logtime != null" >
+        logtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logId != null" >
+        #{logId,jdbcType=INTEGER},
+      </if>
+      <if test="hpzl != null" >
+        #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="hphm != null" >
+        #{hphm,jdbcType=VARCHAR},
+      </if>
+      <if test="logtime != null" >
+        #{logtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.hnust.model.QueryLog" >
+    update query_log
+    <set >
+      <if test="hpzl != null" >
+        hpzl = #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="hphm != null" >
+        hphm = #{hphm,jdbcType=VARCHAR},
+      </if>
+      <if test="logtime != null" >
+        logtime = #{logtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateBySelective" parameterType="com.cn.hnust.model.QueryLog" >
+    update query_log
+    <set >
+      <if test="hpzl != null" >
+        hpzl = #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="hphm != null" >
+        hphm = #{hphm,jdbcType=VARCHAR},
+      </if>
+      <if test="logtime != null" >
+        logtime = #{logtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where 1=1
+    <if test="hpzl != null" >
+       and hpzl = #{hpzl,jdbcType=VARCHAR}
+     </if>
+     <if test="hphm != null" >
+       and hphm = #{hphm,jdbcType=VARCHAR}
+     </if>
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.hnust.model.QueryLog" >
+    update query_log
+    set hpzl = #{hpzl,jdbcType=VARCHAR},
+      hphm = #{hphm,jdbcType=VARCHAR},
+      logtime = #{logtime,jdbcType=TIMESTAMP}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+</mapper>

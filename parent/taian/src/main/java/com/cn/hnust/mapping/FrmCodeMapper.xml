@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.FrmCodeMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.hnust.model.FrmCode" >
+    <result column="xtlb" property="xtlb" jdbcType="VARCHAR" />
+    <result column="dmlb" property="dmlb" jdbcType="VARCHAR" />
+    <result column="dmz" property="dmz" jdbcType="VARCHAR" />
+    <result column="dmsm1" property="dmsm1" jdbcType="VARCHAR" />
+    <result column="dmsm2" property="dmsm2" jdbcType="VARCHAR" />
+    <result column="dmsm3" property="dmsm3" jdbcType="VARCHAR" />
+    <result column="dmsm4" property="dmsm4" jdbcType="VARCHAR" />
+    <result column="dmsx" property="dmsx" jdbcType="VARCHAR" />
+    <result column="sxh" property="sxh" jdbcType="VARCHAR" />
+    <result column="ywdx" property="ywdx" jdbcType="VARCHAR" />
+    <result column="zt" property="zt" jdbcType="VARCHAR" />
+    <result column="csbj" property="csbj" jdbcType="VARCHAR" />
+    <result column="gxsj" property="gxsj" jdbcType="DATE" />
+  </resultMap>
+  
+  <select id="getFrmCodeByWhere" parameterType="com.cn.hnust.model.FrmCode" resultMap="BaseResultMap">
+  select * from frm_code where xtlb=#{xtlb} and dmlb=#{dmlb} and dmz=#{dmz}
+  </select>
+  
+  <insert id="insert" parameterType="com.cn.hnust.model.FrmCode" >
+    insert into frm_code (xtlb, dmlb, dmz, 
+      dmsm1, dmsm2, dmsm3, 
+      dmsm4, dmsx, sxh, ywdx, 
+      zt, csbj, gxsj)
+    values (#{xtlb,jdbcType=VARCHAR}, #{dmlb,jdbcType=VARCHAR}, #{dmz,jdbcType=VARCHAR}, 
+      #{dmsm1,jdbcType=VARCHAR}, #{dmsm2,jdbcType=VARCHAR}, #{dmsm3,jdbcType=VARCHAR}, 
+      #{dmsm4,jdbcType=VARCHAR}, #{dmsx,jdbcType=VARCHAR}, #{sxh,jdbcType=VARCHAR}, #{ywdx,jdbcType=VARCHAR}, 
+      #{zt,jdbcType=VARCHAR}, #{csbj,jdbcType=VARCHAR}, #{gxsj,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.hnust.model.FrmCode" >
+    insert into frm_code
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="xtlb != null" >
+        xtlb,
+      </if>
+      <if test="dmlb != null" >
+        dmlb,
+      </if>
+      <if test="dmz != null" >
+        dmz,
+      </if>
+      <if test="dmsm1 != null" >
+        dmsm1,
+      </if>
+      <if test="dmsm2 != null" >
+        dmsm2,
+      </if>
+      <if test="dmsm3 != null" >
+        dmsm3,
+      </if>
+      <if test="dmsm4 != null" >
+        dmsm4,
+      </if>
+      <if test="dmsx != null" >
+        dmsx,
+      </if>
+      <if test="sxh != null" >
+        sxh,
+      </if>
+      <if test="ywdx != null" >
+        ywdx,
+      </if>
+      <if test="zt != null" >
+        zt,
+      </if>
+      <if test="csbj != null" >
+        csbj,
+      </if>
+      <if test="gxsj != null" >
+        gxsj,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="xtlb != null" >
+        #{xtlb,jdbcType=VARCHAR},
+      </if>
+      <if test="dmlb != null" >
+        #{dmlb,jdbcType=VARCHAR},
+      </if>
+      <if test="dmz != null" >
+        #{dmz,jdbcType=VARCHAR},
+      </if>
+      <if test="dmsm1 != null" >
+        #{dmsm1,jdbcType=VARCHAR},
+      </if>
+      <if test="dmsm2 != null" >
+        #{dmsm2,jdbcType=VARCHAR},
+      </if>
+      <if test="dmsm3 != null" >
+        #{dmsm3,jdbcType=VARCHAR},
+      </if>
+      <if test="dmsm4 != null" >
+        #{dmsm4,jdbcType=VARCHAR},
+      </if>
+      <if test="dmsx != null" >
+        #{dmsx,jdbcType=VARCHAR},
+      </if>
+      <if test="sxh != null" >
+        #{sxh,jdbcType=VARCHAR},
+      </if>
+      <if test="ywdx != null" >
+        #{ywdx,jdbcType=VARCHAR},
+      </if>
+      <if test="zt != null" >
+        #{zt,jdbcType=VARCHAR},
+      </if>
+      <if test="csbj != null" >
+        #{csbj,jdbcType=VARCHAR},
+      </if>
+      <if test="gxsj != null" >
+        #{gxsj,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>

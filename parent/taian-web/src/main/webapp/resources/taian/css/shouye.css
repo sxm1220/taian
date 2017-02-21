@@ -1,0 +1,58 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,p,div,ul,li,a {margin:0px; padding:0px; font-family:'微软雅黑';}
+body{
+	background-image:url(../images/bg.png);
+	background-position:center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.header{ width:1000px; margin-left:auto; margin-right:auto; text-align:center; margin-top:125px;}
+.search{ font-size:30px; color:#fff; width:1600px; margin-left:auto; margin-right:auto; text-align:center; margin-top:80px;}
+.select-1{ width:358px; padding:5px; height:57px; font-family:'微软雅黑'; border-radius:5px; font-size:24px; background-image:url(../images/select-1.png); border:0px; background-color: transparent; overflow: hidden;}
+.selectbox { width:328px; overflow:hidden; border-right:1px #000 solid;}
+.select-2{ width:160px; padding:5px; height:57px; font-family:'微软雅黑'; border-radius:5px; font-size:24px; background-image:url(../images/select-2.png); border:0px; background-color: transparent; overflow: hidden;}
+.selectbox-2 { width:130px; overflow:hidden; border-right:1px #000 solid; float:left;}
+.sr-1{ width:333px; height:47px; padding:5px; font-size:24px; background-image:url(../images/sr-1.png); float:left; border:0px; background-color:transparent;}
+.btn-1{
+	width:170px;
+	height:57px;
+	font-family:'微软雅黑';
+	background-color:#ff9600;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	font-size:28px;
+	color:#fff;
+	border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */
+	-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */
+	-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */
+	background-image: url(../images/sousuo.png);
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	text-indent:30px;
+}
+.btn-2{ width:170px; height:57px; font-family:'微软雅黑'; background-color:#00bd43; margin:0px; padding:0px; border:0px;font-size:28px; color:#fff;
+border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */ 
+	background-image: url(../images/shuaxin.png);
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	text-indent:30px;
+}
+.mokuai{
+	font-size:36px;
+	color:#ff9600;
+	width:1280px;
+	height:488px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	background-image: url(../images/line.png);
+}
+.mokuai-01{ width:282px; height:184px;  float:left; padding-left:20px;padding-top:280px;  }
+.mokuai-02{ width:282px; height:184px;  float:left; padding-left:40px;padding-top:30px;  }
+.mokuai-03{ width:282px; height:184px;  float:left; padding-left:40px;padding-top:280px;  }
+.mokuai-04{ width:282px; height:184px;  float:left; padding-left:40px;padding-top:50px;  }
+.bottom{ width:1000px; height:100px; line-height:100px; font-family:"微软雅黑"; font-size:26px; color:#fff; margin-left:auto; margin-right:auto; text-align:center; margin-top:120px;}
+.reback{ width:80px; height:76px; display:block; position:absolute; right:20px; top:20px; }

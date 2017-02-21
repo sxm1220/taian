@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.HpzlMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.hnust.model.Hpzl" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="hpzl" property="hpzl" jdbcType="VARCHAR" />
+    <result column="zlmc" property="zlmc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, hpzl, zlmc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hpzl
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hpzl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.hnust.model.Hpzl" >
+    insert into hpzl (id, hpzl, zlmc
+      )
+    values (#{id,jdbcType=INTEGER}, #{hpzl,jdbcType=VARCHAR}, #{zlmc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.hnust.model.Hpzl" >
+    insert into hpzl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="hpzl != null" >
+        hpzl,
+      </if>
+      <if test="zlmc != null" >
+        zlmc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hpzl != null" >
+        #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="zlmc != null" >
+        #{zlmc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.hnust.model.Hpzl" >
+    update hpzl
+    <set >
+      <if test="hpzl != null" >
+        hpzl = #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="zlmc != null" >
+        zlmc = #{zlmc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.hnust.model.Hpzl" >
+    update hpzl
+    set hpzl = #{hpzl,jdbcType=VARCHAR},
+      zlmc = #{zlmc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getHpzlList"  resultMap="BaseResultMap" >
+  	select * from hpzl
+  </select>
+</mapper>

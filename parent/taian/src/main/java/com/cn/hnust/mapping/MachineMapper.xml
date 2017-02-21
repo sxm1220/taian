@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.hnust.dao.MachineMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.hnust.model.Machine" >
+    <id column="m_id" property="mId" jdbcType="INTEGER" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="jyjgbh" property="jyjgbh" jdbcType="VARCHAR" />
+    <result column="keyCode" property="keycode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    m_id, ip, jyjgbh, keyCode
+  </sql>
+  
+  <select id="selectByCondation" resultMap="BaseResultMap" parameterType="com.cn.hnust.model.Machine" >
+    select 
+    <include refid="Base_Column_List" />
+    from machine
+    where 1=1
+    <if test="ip!=null and ip!=''">
+    	and IP = #{ip,jdbcType=VARCHAR}
+    </if>
+     <if test="jyjgbh!=null and jyjgbh!=''">
+    	and JYJGBH = #{jyjgbh,jdbcType=VARCHAR}
+    </if>
+    <if test="keycode!=null and keycode!=''">
+    	and KEYCODE = #{keycode,jdbcType=VARCHAR}
+    </if>
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from machine
+    where m_id = #{mId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from machine
+    where m_id = #{mId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cn.hnust.model.Machine" >
+    insert into machine (m_id, ip, jyjgbh, 
+      keyCode)
+    values (#{mId,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{jyjgbh,jdbcType=VARCHAR}, 
+      #{keycode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.hnust.model.Machine" >
+    insert into machine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mId != null" >
+        m_id,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="jyjgbh != null" >
+        jyjgbh,
+      </if>
+      <if test="keycode != null" >
+        keyCode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mId != null" >
+        #{mId,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="jyjgbh != null" >
+        #{jyjgbh,jdbcType=VARCHAR},
+      </if>
+      <if test="keycode != null" >
+        #{keycode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.hnust.model.Machine" >
+    update machine
+    <set >
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="jyjgbh != null" >
+        jyjgbh = #{jyjgbh,jdbcType=VARCHAR},
+      </if>
+      <if test="keycode != null" >
+        keyCode = #{keycode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where m_id = #{mId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.hnust.model.Machine" >
+    update machine
+    set ip = #{ip,jdbcType=VARCHAR},
+      jyjgbh = #{jyjgbh,jdbcType=VARCHAR},
+      keyCode = #{keycode,jdbcType=VARCHAR}
+    where m_id = #{mId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,230 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,p,div,ul,li,a {margin:0px; padding:0px; font-family:'微软雅黑';}
+body{
+	background-image:url(../images/bg.png);
+	background-position:center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.header{
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	margin-top:105px;
+}
+.search{ font-size:30px; color:#fff; width:1600px; margin-left:auto; margin-right:auto; text-align:center; margin-top:80px;}
+.select-1{ width:358px; padding:5px; height:57px; font-family:'微软雅黑'; border-radius:5px; font-size:24px; background-image:url(../images/select-1.png); border:0px; background-color: transparent; overflow: hidden;}
+.select-2{ width:200px; padding:5px; height:57px; font-family:'微软雅黑'; border-radius:5px; font-size:24px; background-image:url(../images/select-1.png); border:0px; background-color: transparent; overflow: hidden;}
+.selectbox { width:328px; overflow:hidden; border-right:0px #000 solid;}
+.select-2{ width:160px; padding:5px; height:57px; font-family:'微软雅黑'; border-radius:5px; font-size:24px; background-image:url(../images/select-2.png); border:0px; background-color: transparent; overflow: hidden;}
+.selectbox-2 { width:130px; overflow:hidden; border-right:0px #000 solid; float:left;}
+.sr-1{ width:333px; height:47px; padding:5px; font-size:24px; background-image:url(../images/sr-1.png); float:left; border:0px; background-color:transparent;}
+.sr-2{ width:158px; height:47px; padding-top:5px;padding-bottom:5px;margin-right:10px;  font-size:24px; background-image:url(../images/sr-2.png); float:left; border:0px; background-color:transparent;}
+.btn-1{
+	width:170px;
+	height:57px;
+	font-family:'微软雅黑';
+	background-color:#ff9600;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	font-size:28px;
+	color:#fff;
+	border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */
+	-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */
+	-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */
+	background-image: url(../images/sousuo.png);
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	text-indent:30px;
+	cursor: pointer;
+}
+.btn-2{ width:170px; height:57px; font-family:'微软雅黑'; background-color:#00bd43; margin:0px; padding:0px; border:0px;font-size:28px; color:#fff;
+border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */ 
+	background-image: url(../images/shuaxin.png);
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	text-indent:30px;
+	cursor: pointer;
+}
+
+
+.btn-keybord{ width:170px; height:57px; font-family:'微软雅黑'; background-color:#00bd43; margin:0px; padding:0px; border:0px;font-size:28px; color:#fff;
+border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */ 
+	background-image: url(../images/jianpan.png);
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	text-indent:30px;
+	cursor: pointer;
+}
+.btn-keybord_1{ width:80px; height:57px; font-family:'微软雅黑'; background-color:#00bd43; margin:0px; padding:0px; border:0px;font-size:28px; color:#fff;
+border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */ 
+	/* background-image: url(../images/jianpan.png); */
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	/* text-indent:30px; */
+	cursor: pointer;
+}
+
+.btn-print{ width:170px; height:57px; font-family:'微软雅黑'; background-color:#00bd43; margin:0px; padding:0px; border:0px;font-size:28px; color:#fff;
+border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ 
+-moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ 
+-webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */ 
+	background-image: url(../images/dayin.png);
+	background-repeat: no-repeat;
+	background-position: 30px center;
+	text-indent:30px;
+	cursor: pointer;
+}
+.jieguo{ font-size:36px; color:#ff9600; width:1600px; margin-left:auto; margin-right:auto; text-align:center; margin-top:60px; }
+.jianpan{ font-size:36px; color:#ff9600; width:1600px; margin-left:auto; margin-right:auto; text-align:center; margin-top:60px; position:absolute; bottom:0px; left:10%; }
+.jianpan-1{ font-size:36px; color:#ff9600; width:1250px; margin-left:auto; margin-right:auto; text-align:center;  }
+.jianpan-1 a {
+	sbackground-image: url(../images/anniu.png);
+	height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+	vertical-align: middle;
+	margin: 5px;
+	background-image: url(../images/anniu.png);
+	line-height: 106px;
+}
+.jianpan-1 a:hover {
+	background-image: url(../images/anniu-hover.png);
+	height: 106px;
+	line-height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	text-indent: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+}
+.jianpan-2{ font-size:54px; color:#ff9600; width:1100px; margin-left:auto; margin-right:auto; text-align:center;  }
+.jianpan-2 a {
+	sbackground-image: url(../images/anniu.png);
+	height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+	vertical-align: middle;
+	margin: 5px;
+	background-image: url(../images/anniu.png);
+	line-height: 106px;
+}
+.jianpan-2 a:hover {
+	background-image: url(../images/anniu-hover.png);
+	height: 106px;
+	line-height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	text-indent: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+}
+.jianpan-3{ font-size:54px; color:#ff9600; width:980px; margin-left:auto; margin-right:auto; text-align:center;  }
+.jianpan-3 a {
+	sbackground-image: url(../images/anniu.png);
+	height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+	vertical-align: middle;
+	margin: 5px;
+	background-image: url(../images/anniu.png);
+	line-height: 106px;
+}
+.jianpan-3 a:hover {
+	background-image: url(../images/anniu-hover.png);
+	height: 106px;
+	line-height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	text-indent: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+}
+.jianpan-4{ font-size:54px; color:#ff9600; width:760px; margin-left:auto; margin-right:auto; text-align:center;  }
+.jianpan-4 a {
+	sbackground-image: url(../images/anniu.png);
+	height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+	vertical-align: middle;
+	margin: 5px;
+	background-image: url(../images/anniu.png);
+	line-height: 106px;
+}
+.jianpan-4 a:hover {
+	background-image: url(../images/anniu-hover.png);
+	height: 106px;
+	line-height: 106px;
+	width: 98px;
+	font-family: "微软雅黑";
+	font-size: 54px;
+	text-align: center;
+	text-indent: center;
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+}
+.ts{ float:left;}
+.ts a{
+	width:149px;
+	height:106px;
+	font-size:40px;
+	background-image: url(../images/anniu2.png);
+}
+.ts a:hover{
+	width:149px;
+	height:106px;
+	font-size:40px;
+	background-image: url(../images/anniu2-hover.png);
+}
+.djs{ width:380px; height:80px; line-height:80px; font-family:"微软雅黑"; font-size:28px; color:#FFF; position:absolute; top:20px; right:20px;}
+.djs-time{ float:right;}
+.djs a{
+	float:right;
+	margin-left: 20px;
+}

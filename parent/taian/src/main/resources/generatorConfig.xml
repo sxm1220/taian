@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+ <classPathEntry location="E:\work\tools\mavenlib 2.0\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar" />
+<context id="ORATables" targetRuntime="MyBatis3" defaultModelType="flat" >
+	<!-- <plugin type="com.nova.his.core.mybatis.plugin.DeleteLogicByIdsPlugin">
+	</plugin> -->
+	<!-- 去除自动生成的注释 -->
+	<commentGenerator>
+		<property name="suppressDate" value="true" />
+		<property name="suppressAllComments" value="true" />
+	</commentGenerator>
+	
+	 <!-- 配置连接数据信息 -->
+	<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/sun_db" userId="root" password="root"> 
+	</jdbcConnection>
+	<javaTypeResolver >
+		<property name="forceBigDecimals" value="false" />
+	</javaTypeResolver>
+	
+	<!-- 配置自动生成的Model的保存路径与其它参数 -->
+	<javaModelGenerator targetPackage="com.cn.hnust.model" targetProject="src\main\java"  >
+		<property name="enableSubPackages" value="false"/> 
+		<property name="trimStrings" value="true"/> 
+	</javaModelGenerator> 
+	
+	<!-- 配置自动生成的Mappper.xml映射的保存路径与其它参数 --> 
+	<sqlMapGenerator targetPackage="com.cn.hnust.mapping" targetProject="src\main\java"> 
+		<property name="enableSubPackages" value="false"/> 
+	</sqlMapGenerator>
+	
+	<!-- 配置自动生成的Mappper.java接口的保存路径与其它参数 --> 
+	<javaClientGenerator type="XMLMAPPER" targetPackage="com.cn.hnust.dao" targetProject="src\main\java">
+		<property name="enableSubPackages" value="false"/> 
+	</javaClientGenerator>
+	
+	<!-- 生成表对应的操作与实体对象 -->
+	
+	<table  tableName="frm_code" domainObjectName="FrmCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"> 
+		<property name="useActualColumnNames" value="false"/> 
+	</table>
+	
+</context>
+</generatorConfiguration>

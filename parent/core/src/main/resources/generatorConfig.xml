@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+<!-- <classPathEntry location="E:\app\Administrator\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar" /> -->
+<context id="ORATables" targetRuntime="MyBatis3" defaultModelType="flat" >
+	<!-- <plugin type="com.nova.his.core.mybatis.plugin.DeleteLogicByIdsPlugin">
+	</plugin> -->
+	<!-- 去除自动生成的注释 -->
+	<commentGenerator>
+		<property name="suppressDate" value="true" />
+		<property name="suppressAllComments" value="true" />
+	</commentGenerator>
+	
+	 <!-- 配置连接数据信息 -->
+	<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.115:1521:testdb" userId="nova_his" password="admin"> 
+	</jdbcConnection>
+	<javaTypeResolver >
+		<property name="forceBigDecimals" value="false" />
+	</javaTypeResolver>
+	
+	<!-- 配置自动生成的Model的保存路径与其它参数 -->
+	<javaModelGenerator targetPackage="com.nova.his.medicalworkstation.model" targetProject="src\main\java"  >
+		<property name="enableSubPackages" value="false"/> 
+		<property name="trimStrings" value="true"/> 
+	</javaModelGenerator> 
+	
+	<!-- 配置自动生成的Mappper.xml映射的保存路径与其它参数 --> 
+	<sqlMapGenerator targetPackage="com.nova.his.medicalworkstation.dao.mappings" targetProject="src\main\java"> 
+		<property name="enableSubPackages" value="false"/> 
+	</sqlMapGenerator>
+	
+	<!-- 配置自动生成的Mappper.java接口的保存路径与其它参数 --> 
+	<javaClientGenerator type="XMLMAPPER" targetPackage="com.nova.his.medicalworkstation.dao" targetProject="src\main\java">
+		<property name="enableSubPackages" value="false"/> 
+	</javaClientGenerator>
+	
+	<!-- 生成表对应的操作与实体对象 -->
+	
+	<table  tableName="jybg_bc" domainObjectName="JybgBc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"> 
+		<property name="useActualColumnNames" value="false"/> 
+	</table>
+	
+</context>
+</generatorConfiguration>
