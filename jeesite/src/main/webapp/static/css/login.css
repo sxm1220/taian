@@ -1,0 +1,7 @@
+html,body{ height:100%; background-image:url(../images/lg-bg.png); background-size:cover;}
+.login-cont{ }
+ .form-signin{width:1002px; height:456px; display:block; background-image:url(../images/lg-dl.png); margin-left:auto; margin-right:auto;margin:0 auto 20px;background-color:#fff;}
+ .login-text{ width:400px; margin-left:550px;}
+ #username{ background-image:url(../images/icon01.png); background-position: 5px center; background-repeat:no-repeat; height:45px; line-height:45px; text-indent:40px;}
+ #password{ background-image:url(../images/icon02.png); background-position: 5px center; background-repeat:no-repeat; height:45px; line-height:45px; text-indent:40px;}
+ #vlitade{ background-image:url(../images/icon03.png); background-position: 5px center; background-repeat:no-repeat; height:45px; line-height:45px; text-indent:40px;}

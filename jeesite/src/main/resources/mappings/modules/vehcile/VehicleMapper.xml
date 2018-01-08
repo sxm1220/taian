@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.thinkgem.jeesite.modules.vehcile.dao.VehicleMapper" >
+  <resultMap id="BaseResultMap" type="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" >
+    <id column="vhe_id" property="vheId" jdbcType="INTEGER" />
+    <result column="hpzl" property="hpzl" jdbcType="VARCHAR" />
+    <result column="hphm" property="hphm" jdbcType="VARCHAR" />
+    <result column="clsbdh" property="clsbdh" jdbcType="VARCHAR" />
+    <result column="yxqz" property="yxqz" jdbcType="VARCHAR" />
+    <result column="fzjg" property="fzjg" jdbcType="VARCHAR" />
+    <result column="cllx" property="cllx" jdbcType="VARCHAR" />
+    <result column="syxz" property="syxz" jdbcType="CHAR" />
+    <result column="clyt" property="clyt" jdbcType="VARCHAR" />
+    <result column="ytxz" property="ytxz" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="syr" property="syr" jdbcType="VARCHAR" />
+    <result column="yzbm" property="yzbm" jdbcType="VARCHAR" />
+    <result column="lxdh" property="lxdh" jdbcType="VARCHAR" />
+    <result column="lxdz" property="lxdz" jdbcType="VARCHAR" />
+    <result column="dlr" property="dlr" jdbcType="VARCHAR" />
+    <result column="ccrq" property="ccrq" jdbcType="VARCHAR" />
+    <result column="ccdjrq" property="ccdjrq" jdbcType="VARCHAR" />
+    <result column="print_date" property="printDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    vhe_id, hpzl, hphm, clsbdh, yxqz, fzjg, cllx, syxz, clyt, ytxz, type, syr, yzbm, 
+    lxdh, lxdz, dlr,ccrq,ccdjrq,print_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from vehicle
+    where vhe_id = #{vheId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from vehicle
+    where vhe_id = #{vheId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" >
+    insert into vehicle (vhe_id, hpzl, hphm, 
+      clsbdh, yxqz, fzjg, 
+      cllx, syxz, clyt, ytxz, 
+      type, syr, yzbm, lxdh, 
+      lxdz, dlr,print_date)
+    values (#{vheId,jdbcType=INTEGER}, #{hpzl,jdbcType=VARCHAR}, #{hphm,jdbcType=VARCHAR}, 
+      #{clsbdh,jdbcType=VARCHAR}, #{yxqz,jdbcType=VARCHAR}, #{fzjg,jdbcType=VARCHAR}, 
+      #{cllx,jdbcType=VARCHAR}, #{syxz,jdbcType=CHAR}, #{clyt,jdbcType=VARCHAR}, #{ytxz,jdbcType=VARCHAR}, 
+      #{type,jdbcType=CHAR}, #{syr,jdbcType=VARCHAR}, #{yzbm,jdbcType=VARCHAR}, #{lxdh,jdbcType=VARCHAR}, 
+      #{lxdz,jdbcType=VARCHAR}, #{dlr,jdbcType=VARCHAR},#{printDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" >
+    insert into vehicle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vheId != null" >
+        vhe_id,
+      </if>
+      <if test="hpzl != null" >
+        hpzl,
+      </if>
+      <if test="hphm != null" >
+        hphm,
+      </if>
+      <if test="clsbdh != null" >
+        clsbdh,
+      </if>
+      <if test="yxqz != null" >
+        yxqz,
+      </if>
+      <if test="fzjg != null" >
+        fzjg,
+      </if>
+      <if test="cllx != null" >
+        cllx,
+      </if>
+      <if test="syxz != null" >
+        syxz,
+      </if>
+      <if test="clyt != null" >
+        clyt,
+      </if>
+      <if test="ytxz != null" >
+        ytxz,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="syr != null" >
+        syr,
+      </if>
+      <if test="yzbm != null" >
+        yzbm,
+      </if>
+      <if test="lxdh != null" >
+        lxdh,
+      </if>
+      <if test="lxdz != null" >
+        lxdz,
+      </if>
+      <if test="dlr != null" >
+        dlr,
+      </if>
+      <if test="ccrq != null" >
+        ccrq,
+      </if>
+      <if test="ccdjrq != null" >
+        ccdjrq,
+      </if>
+      <if test="zzxzqh != null" >
+        zzxzqh,
+      </if>
+      <if test="jyjgbh != null" >
+        jyjgbh,
+      </if>
+      <if test="printDate != null" >
+        print_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vheId != null" >
+        #{vheId,jdbcType=INTEGER},
+      </if>
+      <if test="hpzl != null" >
+        #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="hphm != null" >
+        #{hphm,jdbcType=VARCHAR},
+      </if>
+      <if test="clsbdh != null" >
+        #{clsbdh,jdbcType=VARCHAR},
+      </if>
+      <if test="yxqz != null" >
+        #{yxqz,jdbcType=VARCHAR},
+      </if>
+      <if test="fzjg != null" >
+        #{fzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="cllx != null" >
+        #{cllx,jdbcType=VARCHAR},
+      </if>
+      <if test="syxz != null" >
+        #{syxz,jdbcType=CHAR},
+      </if>
+      <if test="clyt != null" >
+        #{clyt,jdbcType=VARCHAR},
+      </if>
+      <if test="ytxz != null" >
+        #{ytxz,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="syr != null" >
+        #{syr,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null" >
+        #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdh != null" >
+        #{lxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdz != null" >
+        #{lxdz,jdbcType=VARCHAR},
+      </if>
+      <if test="dlr != null" >
+        #{dlr,jdbcType=VARCHAR},
+      </if>
+      <if test="ccrq != null" >
+        #{ccrq,jdbcType=VARCHAR},
+      </if>
+      <if test="ccdjrq != null" >
+        #{ccdjrq,jdbcType=VARCHAR},
+      </if>
+       <if test="zzxzqh != null" >
+        #{zzxzqh,jdbcType=VARCHAR},
+      </if>
+      <if test="jyjgbh != null" >
+        #{jyjgbh,jdbcType=VARCHAR},
+      </if>
+       <if test="printDate != null" >
+        #{printDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" >
+    update vehicle
+    <set >
+      <if test="hpzl != null" >
+        hpzl = #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="hphm != null" >
+        hphm = #{hphm,jdbcType=VARCHAR},
+      </if>
+      <if test="clsbdh != null" >
+        clsbdh = #{clsbdh,jdbcType=VARCHAR},
+      </if>
+      <if test="yxqz != null" >
+        yxqz = #{yxqz,jdbcType=VARCHAR},
+      </if>
+      <if test="fzjg != null" >
+        fzjg = #{fzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="cllx != null" >
+        cllx = #{cllx,jdbcType=VARCHAR},
+      </if>
+      <if test="syxz != null" >
+        syxz = #{syxz,jdbcType=CHAR},
+      </if>
+      <if test="clyt != null" >
+        clyt = #{clyt,jdbcType=VARCHAR},
+      </if>
+      <if test="ytxz != null" >
+        ytxz = #{ytxz,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="syr != null" >
+        syr = #{syr,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null" >
+        yzbm = #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdh != null" >
+        lxdh = #{lxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdz != null" >
+        lxdz = #{lxdz,jdbcType=VARCHAR},
+      </if>
+      <if test="dlr != null" >
+        dlr = #{dlr,jdbcType=VARCHAR},
+      </if>
+      <if test="printDate != null" >
+        print_date = #{printDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where vhe_id = #{vheId,jdbcType=INTEGER}
+  </update>
+  <update id="updateVehByWhere" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" >
+    update vehicle
+    <set >
+      <if test="hpzl != null" >
+        hpzl = #{hpzl,jdbcType=VARCHAR},
+      </if>
+      <if test="hphm != null" >
+        hphm = #{hphm,jdbcType=VARCHAR},
+      </if>
+      <if test="clsbdh != null" >
+        clsbdh = #{clsbdh,jdbcType=VARCHAR},
+      </if>
+      <if test="yxqz != null" >
+        yxqz = #{yxqz,jdbcType=VARCHAR},
+      </if>
+      <if test="fzjg != null" >
+        fzjg = #{fzjg,jdbcType=VARCHAR},
+      </if>
+      <if test="cllx != null" >
+        cllx = #{cllx,jdbcType=VARCHAR},
+      </if>
+      <if test="syxz != null" >
+        syxz = #{syxz,jdbcType=CHAR},
+      </if>
+      <if test="clyt != null" >
+        clyt = #{clyt,jdbcType=VARCHAR},
+      </if>
+      <if test="ytxz != null" >
+        ytxz = #{ytxz,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="syr != null" >
+        syr = #{syr,jdbcType=VARCHAR},
+      </if>
+      <if test="yzbm != null" >
+        yzbm = #{yzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdh != null" >
+        lxdh = #{lxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="lxdz != null" >
+        lxdz = #{lxdz,jdbcType=VARCHAR},
+      </if>
+      <if test="dlr != null" >
+        dlr = #{dlr,jdbcType=VARCHAR},
+      </if>
+      <if test="jyjgbh != null" >
+        jyjgbh = #{jyjgbh,jdbcType=VARCHAR},
+      </if>
+      <if test="printDate != null" >
+        print_date = #{printDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where 
+  	hpzl=#{hpzl}
+  	and hphm=#{hphm}
+  	and clsbdh= #{clsbdh}
+  	and jyjgbh= #{jyjgbh}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" >
+    update vehicle
+    set hpzl = #{hpzl,jdbcType=VARCHAR},
+      hphm = #{hphm,jdbcType=VARCHAR},
+      clsbdh = #{clsbdh,jdbcType=VARCHAR},
+      yxqz = #{yxqz,jdbcType=VARCHAR},
+      fzjg = #{fzjg,jdbcType=VARCHAR},
+      cllx = #{cllx,jdbcType=VARCHAR},
+      syxz = #{syxz,jdbcType=CHAR},
+      clyt = #{clyt,jdbcType=VARCHAR},
+      ytxz = #{ytxz,jdbcType=VARCHAR},
+      type = #{type,jdbcType=CHAR},
+      syr = #{syr,jdbcType=VARCHAR},
+      yzbm = #{yzbm,jdbcType=VARCHAR},
+      lxdh = #{lxdh,jdbcType=VARCHAR},
+      lxdz = #{lxdz,jdbcType=VARCHAR},
+      dlr = #{dlr,jdbcType=VARCHAR},
+      print_date = #{printDate,jdbcType=TIMESTAMP}
+    where vhe_id = #{vheId,jdbcType=INTEGER}
+  </update>
+  <select id="getVehByWhere" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" resultMap="BaseResultMap">
+  select * from vehicle where 1=1 
+  <if test="hpzl!=null and hpzl!=''">
+  	and hpzl=#{hpzl}
+  </if>
+  <if test="hphm!=null and hphm!=''">
+  	and hphm=#{hphm}
+  </if>
+  <if test="clsbdh!=null and clsbdh!=''">
+  	and clsbdh like CONCAT('%',#{clsbdh})
+  </if>
+  <if test="jyjgbh!=null and jyjgbh!=''">
+  	and jyjgbh=#{jyjgbh}
+  </if>
+  </select>
+  <select id="getVehByWhere1" parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle" resultMap="BaseResultMap">
+  select * from vehicle where 1=1 
+  <if test="hpzl!=null and hpzl!=''">
+  	and hpzl=#{hpzl}
+  </if>
+  <if test="hphm!=null and hphm!=''">
+  	and hphm=#{hphm}
+  </if>
+ <!--  <if test="clsbdh!=null and clsbdh!=''">
+  	and clsbdh= #{clsbdh}
+  </if> -->
+  <if test="jyjgbh!=null and jyjgbh!=''">
+  	and jyjgbh= #{jyjgbh}
+  </if>
+  </select>
+  <select id="getYzbm" resultType="string" parameterType="string" >
+  select postalcode from postalcode where xzqh=#{glbm}
+  </select>
+  <select id="getPostCodeByHphm" resultType="string" parameterType="string" >
+  select postalcode from postalcodehphm where hphm=#{hphm}
+  </select>
+  <select id="findList" resultMap="BaseResultMap"  parameterType="com.thinkgem.jeesite.modules.vehcile.entity.Vehicle">
+		SELECT 
+			t.*,(select dmsm1 from frm_code where xtlb='00' and dmlb='1007' and dmz=t.hpzl) hpzlmc
+		FROM vehicle t where 1=1
+	  <if test="hpzl!=null and hpzl!=''">
+	  	and hpzl=#{hpzl}
+	  </if>
+	  <if test="hphm!=null and hphm!=''">
+	  	and hphm=#{hphm}
+	  </if> 
+	  <if test="jyjgbh!=null and jyjgbh!=''">
+	  	and jyjgbh=#{jyjgbh}
+	  </if> 
+	  <if test="officeId!=null and officeId!=''">
+	  	and jyjgbh in(select code from sys_office where id=#{officeId})
+	  </if> 
+	  <if test="beginPrintDate!=null and beginPrintDate!=''">
+	  	and print_date&gt;=#{beginPrintDate,jdbcType=DATE}
+	  </if> 
+	  <if test="endPrintDate!=null and endPrintDate!=''">
+	  	and print_date&lt;DATE_ADD(#{endPrintDate,jdbcType=DATE},INTERVAL 1 DAY)
+	  </if> 
+	  order by t.print_date desc
+</select>
+
+<delete id="deleteByIds">
+	delete  from  vehicle where vhe_id in(${ids})
+</delete>
+  
+</mapper>
